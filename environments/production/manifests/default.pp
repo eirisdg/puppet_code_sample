@@ -1,5 +1,5 @@
 node 'default' {
-	notify {'*** DEFAULT NODE ***':
-		message => "Applying default node",
-	}
+	# notify {'*** DEFAULT NODE ***':
+	# 	message => "Applying default node",
+	# }
 }
