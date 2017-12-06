@@ -14,4 +14,27 @@ class base inherits base::params{
 		ensure		=> running,
 		enable		=> true,
 	}
+
+	file { '/etc/motd':
+		ensure => file,
+		mode => '0644',
+		user => 'root',
+		group => 'root',
+		content => "
+
+		==========================
+		SERVER PROPERTY OF EIRISDG
+		==========================
+
+		SYSTEM INFO:
+		------------
+
+		IPADDRESS			: ${::ipaddress}
+		HOSTNAME			: ${::hostname}
+		MEMORY				: ${::memory['system']['total']}
+		CPU CORES			: ${::processors['count']}
+		OPERATING SYSTEM	: ${::os['distro']['description']}
+
+		"
+	}
 }
