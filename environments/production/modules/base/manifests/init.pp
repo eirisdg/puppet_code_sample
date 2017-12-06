@@ -1,4 +1,4 @@
-class base {
+class base inherits base::params{
 
 	user {'deploy':
 		ensure		=> present,
@@ -10,9 +10,8 @@ class base {
 
 	package { ['tree', 'wget', 'git', 'unzip', 'ntp'] : }
 
-	service { 'ntp' : 
+	service { $::base::ntp_service :
 		ensure		=> running,
 		enable		=> true,
 	}
-
 }
