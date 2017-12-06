@@ -18,7 +18,7 @@ class base inherits base::params{
 	file { '/etc/motd':
 		ensure => file,
 		mode => '0644',
-		user => 'root',
+		owner => 'root',
 		group => 'root',
 		content => "
 
