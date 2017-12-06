@@ -33,7 +33,7 @@ class base inherits base::params{
 		HOSTNAME			: ${::hostname}
 		MEMORY				: ${::memory['system']['total']}
 		CPU CORES			: ${::processors['count']}
-		OPERATING SYSTEM	: ${::os['distro']['description']}
+		OPERATING SYSTEM	: ${::os['name']} ${::os['release']['major']}
 
 		"
 	}
