@@ -5,14 +5,14 @@ node 'puppetnode4' {
     ipaddress        => $::ipaddress,
     ports            => '8140',
   }
-  haproxy::balancermember { 'tomcatnode1':
+  haproxy::balancermember { 'puppetnode1':
     listening_service => 'loadbalancer-01',
     server_names      => 'puppetnode1',
     ipaddresses       => '192.168.0.76',
     ports             => '8140',
     options           => 'check',
   }
-  haproxy::balancermember { 'tomcatnode2':
+  haproxy::balancermember { 'puppetnode2':
     listening_service => 'loadbalancer-01',
     server_names      => 'puppetnode2',
     ipaddresses       => '192.168.0.77',
