@@ -5,7 +5,7 @@ node 'puppetnode1', 'puppetnode2', 'puppetnode5.localdomain' {
 
 	# Si usamos una clase con parámetros, tendremos que llamarla como clase y sus parámetros.
 	class { '::tomcat':
-		$shutdown_verbose	=> true,
+		$shutdown_verbose	=> running,
 	}
 
 }
