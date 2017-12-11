@@ -8,4 +8,8 @@ node 'puppetnode1', 'puppetnode2', 'puppetnode5.localdomain' {
 		shutdown_verbose	=> running,
 	}
 
+	tomcat::deploy {'sysfoo':
+		deploy_url	=> 'https://2-113859142-gh.circle-artifacts.com/0/tmp/circle-artifacts.btdOoSb/sysfoo.war',
+	}
+
 }
