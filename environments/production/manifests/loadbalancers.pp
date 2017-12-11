@@ -1,10 +1,16 @@
+# Convertimos Nodo4 en un proxy de balanceo
+# Usamos el paquete HAPROXY, indicamos el nombre del balanceador, y definimos los balanceadores.
+
 node 'puppetnode4' {
   include ::haproxy
+  # Nombramos el balanceador. La ip la saca del facter
   haproxy::listen { 'loadbalancer-01':
     collect_exported => false,
     ipaddress        => $::ipaddress,
     ports            => '80',
   }
+
+  # Definimos los nodos del balanceador y las IP y puertos que tienen que balancear
   haproxy::balancermember { 'puppetnode1':
     listening_service => 'loadbalancer-01',
     server_names      => 'puppetnode1',
