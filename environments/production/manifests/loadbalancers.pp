@@ -25,4 +25,11 @@ node 'puppetnode4' {
     ports             => '8080',
     options           => 'check',
   }
+  haproxy::balancermember { 'puppetnode5':
+    listening_service => 'loadbalancer-01',
+    server_names      => 'puppetnode5',
+    ipaddresses       => '192.168.0.80',
+    ports             => '8080',
+    options           => 'check',
+  }
 }
