@@ -3,7 +3,7 @@ node 'puppetnode4' {
   haproxy::listen { 'loadbalancer-01':
     collect_exported => false,
     ipaddress        => $::ipaddress,
-    ports            => '8140',
+    ports            => '80',
   }
   haproxy::balancermember { 'puppetnode1':
     listening_service => 'loadbalancer-01',
