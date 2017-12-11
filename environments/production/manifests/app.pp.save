@@ -1,5 +1,0 @@
-node 'puppetnode1', 'puppetnode2' {
-	include java::
-	include tomcat::install
-	include tomcat::service
-}
